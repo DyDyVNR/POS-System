@@ -1,0 +1,36 @@
+<div class="container">
+  <button type="button" class="btn btn-success" (click)="onClickAddNew()">
+    Add New
+  </button>
+  <ngx-skeleton-loader *ngIf="loading" count="10" appearance="line"></ngx-skeleton-loader>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of suppliers">
+        <th scope="row">{{ suppliers.indexOf(i) + 1 }}</th>
+        <td>{{ i.name }}</td>
+        <td>{{ i.phone }}</td>
+        <td>{{ i.address }}</td>
+        <td>
+          <a class="btn btn-danger" (click)="openModal(template)">delete</a>
+          <ng-template #template>
+            <div class="modal-body text-center">
+              <p>Are you sure you want to delete this record?</p>
+              <button type="button" class="btn btn-danger" (click)="onClickDelete(i.id)" >Yes</button>
+              <button type="button" class="btn btn-success margin" (click)="decline()" >No</button>
+            </div>
+          </ng-template>
+          <a class="btn btn-secondary m-3" (click)="onClickUpdate(i.id)">edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <button type="button" class="btn btn-outline-danger bi bi-trash-fill p-2 delete" (click)="openModal(template)" *ngIf="isAdmin()">
+    Clear History
+    <ng-template #template>
+      <div class="modal-body text-center">
+        <p>You cannot clear the history for now!</p>
+        <!-- <button type="button" class="btn btn-default" (click)="onClickClear()">Yes</button> -->
+        <button type="button" class="btn btn-success" (click)="decline()" >Understand!</button>
+      </div>
+    </ng-template>
+  </button>
+  <button type="button" class="btn btn-outline-danger" (click)="openModal(template)" *ngIf="!isAdmin()">
+    Clear History
+    <ng-template #template>
+      <div class="modal-body text-center">
+        <p>Sorry! You are not permitted to clear these datas.</p>
+        <button type="button" class="btn btn-primary" (click)="decline()" >OK</button>
+      </div>
+    </ng-template>
+  </button>
+  <ngx-skeleton-loader *ngIf="loading" count="10" appearance="line"></ngx-skeleton-loader>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Total price</th>
+        <th scope="col">Date</th>
+        <th scope="col" *ngIf="isAdmin()">Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of history_order">
+        <th scope="row">{{ history_order.indexOf(i) + 1 }}</th>
+        <td>{{ i.totalPrice }}</td>
+        <td>{{ i.createdDate }}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="openModal(template)" *ngIf="isAdmin()">delete
+          <ng-template #template>
+            <div class="modal-body text-center">
+              <p>You cannot delete the history record for now!</p>
+              <!-- <button type="button" class="btn btn-default" (click)="onClickDelete(i.id)" >Yes</button> -->
+              <button type="button" class="btn btn-success" (click)="decline()" >Understand!</button>
+            </div>
+          </ng-template> </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

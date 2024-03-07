@@ -1,0 +1,33 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="mb-3">
+      <label for="nameFormControl" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nameFormControl"
+        placeholder="input name here"
+        formControlName="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="descriptionFormControl" class="form-label">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="descriptionFormControl"
+        placeholder="input description here"
+        formControlName="description"
+      />
+    </div>
+    <div class="col-6 d-md-flex justify-content-md-end margin">
+      <button type="submit" class="btn btn-outline-primary ">Submit</button>
+      <button
+        type="button"
+        class="btn btn-danger margin_left"
+        (click)="onClickCancel()"
+      >Cancel
+      </button>
+      </div>
+  </form>
+</div>

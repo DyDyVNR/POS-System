@@ -1,0 +1,26 @@
+<div class="w-100 d-flex d-inline-flex m-1 p-1 item">
+  <div class="col-sm-3">
+    <div class="image_content">
+      <img [src]="order_item.pic" class="image" alt="item" />
+    </div>
+  </div>
+  <div class="col-sm-9 align-self-center">
+    <div class="d-flex justify-content-between">
+      <div>
+        <p>{{ order_item.title }}</p>
+        <div class="d-flex d-inline-flex">
+          <div class="cal" (click)="onDecrease(order_item)"><p>-</p></div>
+          <p>{{ order_item.qty }}</p>
+          <div class="cal" (click)="onIncrease(order_item)"><p>+</p></div>
+        </div>
+      </div>
+      <div class="align-self-center">
+        {{ order_item.price }} USD
+        <i
+          class="bi bi-trash-fill p-2 delete"
+          (click)="onClickDelete(order_item)"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

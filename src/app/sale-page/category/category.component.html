@@ -1,0 +1,5 @@
+<div class="container d-flex d-inline-flex">
+  <div class="list_category" *ngFor="let c of categories" (click)="onClickCategory(c.id)">
+    <p>{{ c.name }}</p>
+  </div>
+</div>

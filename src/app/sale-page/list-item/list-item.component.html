@@ -1,0 +1,14 @@
+<app-category (clickCategory)="onClickCategory($event)"></app-category>
+<ngx-skeleton-loader *ngIf="loading"
+  [theme]="{
+    'border-radius': '8px',
+    height: '234px',
+    width: '264px',
+    border: '1px solid white'
+  }"
+  count="5"
+  appearance="circle"
+></ngx-skeleton-loader>
+<div class="d-flex d-inline-flex" *ngFor="let d of itemsFilter">
+  <app-item [item]="d"> </app-item>
+</div>

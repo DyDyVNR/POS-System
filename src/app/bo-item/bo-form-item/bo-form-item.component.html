@@ -1,0 +1,85 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="mb-3">
+      <label for="titleFormControl" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="titleFormControl"
+        placeholder="input title here"
+        formControlName="title"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="priceFormControl" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        id="priceFormControl"
+        placeholder="input price here"
+        formControlName="price"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="imageFormControl" class="form-label">Image</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageFormControl"
+        placeholder="input image here"
+        formControlName="image"
+      />
+    </div>
+    <label for="descriptionFormControl" class="form-label">Category</label>
+    <div class="mb-3">
+      <select
+        class="form-select"
+        aria-label="Category"
+        formControlName="category"
+      >
+        <option *ngFor="let c of categories" [value]="c.id">
+          {{ c.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"  formControlName="isStock">
+      <label class="form-check-label" for="flexSwitchCheckDefault" >Check Stock ?</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="stockFormControl" class="form-label" *ngIf="isStocked()">Stock Qty</label>
+      <input
+        type="number"
+        class="form-control"
+        id="stockFormControl"
+        placeholder="input stock qty here"
+        *ngIf="isStocked()"
+        formControlName="stock"
+      />
+    </div>
+
+    <label for="descriptionFormControl" class="form-label" >Supplier</label>
+    <div class="mb-3">
+      <select
+        class="form-select"
+        aria-label="Supplier"
+        formControlName="supplier"
+      >
+        <option *ngFor="let s of suppliers" [value]="s.id">
+          {{ s.name }}
+        </option>
+      </select>
+    </div>
+    <div class="col-6 d-md-flex justify-content-md-end margin">
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+    <button
+      type="button"
+      class="btn btn-danger margin_left"
+      (click)="onClickCancel()"
+    >Cancel
+    </button>
+    </div>
+  </form>
+</div>

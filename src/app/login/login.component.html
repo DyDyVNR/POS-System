@@ -1,0 +1,35 @@
+<div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 130px"></textarea>
+  <label for="floatingTextarea">For admin role: <br>
+      Username: "hello1" Password: "121212" <br>
+    For seller role: <br>
+       Username: "gtistudent" Password: "testingTest"
+  </label>
+
+</div>
+<div class="container size border border-info rounded-3 border-5 d-grid" >
+  <form [formGroup]="form">
+    <h2 class="form-label text-center">Welcome to TGI Shop</h2>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="input username"
+        formControlName="username"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Password</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="input password"
+        formControlName="password"
+      />
+    </div>
+    <a class="btn btn-primary margin_left" (click)="onClickLogin()" >Login</a>
+  </form>
+</div>
