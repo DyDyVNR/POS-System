@@ -1,0 +1,31 @@
+.image_content {
+  width: 100px;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  border: solid #ccc 2px;
+  border-radius: 50%;
+}
+
+.item {
+  border: solid 1px #ccc;
+  border-radius: 4px;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+}
+
+.cal {
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 1;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  cursor: pointer;
+}

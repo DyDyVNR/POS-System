@@ -1,0 +1,9 @@
+<div class="card m-1" style="width: 16rem" (click)="onClickItem(item)">
+  <img [src]="item.pic" class="card-img-top" alt="item" />
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <p class="card-text">{{ item.title }}</p>
+      <p class="card-text">{{ item.price }} USD</p>
+    </div>
+  </div>
+</div>

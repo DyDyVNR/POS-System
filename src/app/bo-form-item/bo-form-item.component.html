@@ -1,0 +1,38 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="mb-3">
+      <label for="titleFormControl" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="titleFormControl"
+        placeholder="input title here"
+        formControlName="title"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="priceFormControl" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        id="priceFormControl"
+        placeholder="input price here"
+        formControlName="price"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="imageFormControl" class="form-label">Image</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageFormControl"
+        placeholder="input image here"
+        formControlName="image"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-danger margin_right" (click)="onClickCancel()">
+      Cancel
+    </button>
+  </form>
+</div>

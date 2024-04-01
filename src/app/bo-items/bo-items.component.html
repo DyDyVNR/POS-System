@@ -1,0 +1,26 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)="onClickAddNew()">
+    Add New
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of items">
+        <th scope="row">{{ items.indexOf(i) + 1 }}</th>
+        <td>{{ i.title }}</td>
+        <td>{{ i.price }}</td>
+        <td>
+          <a class="btn btn-primary" (click)="onClickDelete(i.id)">delete</a>
+          <a class="btn btn-danger m-3" (click)="onClickUpdate(i.id)">edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
